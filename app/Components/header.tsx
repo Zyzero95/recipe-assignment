@@ -8,8 +8,8 @@ export default function Header() {
         <header className={styles.header}>
             <h1>Titel?</h1>
 
-            <nav>
-                <ul className={styles.navMenu}>
+            <nav className={styles.navMenu}>
+                <ul>
                     <li><Link href={`./`}>Home</Link></li>
                     <li><Link href="#">About</Link></li>
                 </ul>

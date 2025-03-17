@@ -1,6 +1,6 @@
 
 .header {
-    padding: 2rem;
+    padding: 1rem;
     background-color: var(--dark-red);
     color: var(--off-white);
     display: flex;
@@ -8,17 +8,24 @@
     align-items: center;
 }
 
-.navMenu {
+.navMenu ul {
     list-style: none;
     display: flex;
-    li {
-        padding: 1rem 1rem 0.5rem 1rem;
-    }
-    a {
-        color: var(--off-white);
-        text-decoration: none;
-    }
-    a:hover {
-        text-decoration: underline;
-    }
+    margin-top: 1rem;
+    
+}
+
+.navMenu li {
+   padding: 1rem 0; 
+}
+
+.navMenu a {
+    color: var(--off-white);
+    text-decoration: none;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+}
+
+.navMenu a:hover {
+    background-color: var(--light-red);
 }
