@@ -1,11 +1,12 @@
+import RecipeCard from "./Components/RecipeCard";
 import fetchRecipes from "./Scripts/fetch";
 
-export default function Home() {
+export default async function Home() {
 
-  fetchRecipes();
+  const data = await fetchRecipes();
   return (
     <main>
-      
+      {data?.map((recipe) => <RecipeCard key={recipe.id} data={recipe}/>)}
     </main>
   );
 }
