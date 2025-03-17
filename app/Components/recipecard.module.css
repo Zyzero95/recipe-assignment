@@ -7,16 +7,17 @@
 .recipeCardWrapper {
     display: grid;
     grid-template-columns: 0.5fr auto;
-    grid-template-rows: repeat(8, auto);
-    width: 70vw;
+    grid-template-rows: repeat(7, auto);
+    width: 60vw;
     height: 30vh;
     border: 1px solid black;
-    /* background: linear-gradient(to left, var(--light-red), var(--beige)); */
+    border-radius: 25px;
+    overflow: hidden;
 
     .imgFig {
         width: 30vw;
         grid-column: 1;
-        grid-row: span 8;
+        grid-row: span 7;
         position: relative;
         img {
             object-fit: cover;
@@ -36,7 +37,7 @@
     .recipeCardTagWrapper{
         display: grid;
         margin-left: 0.5rem;
-        width: 30%;
+        width: 40%;
         align-items: center;
         grid-template-columns: repeat(3, auto);
     }

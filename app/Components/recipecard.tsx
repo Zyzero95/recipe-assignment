@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link";
 import Image from "next/image";
 import { Recipe } from "../Interfaces/interfaces";
@@ -28,8 +29,7 @@ function RecipeCard({ data }: RecipeData) {
           <h3 className={styles.recipeCardMealHeading}>Meal Type:</h3>
           {data.mealType.map((type) => <h4 className={styles.recipeCardMeal} key={type}>{type}</h4>)}
         </section>
-        <p className={styles.recipeCardPrepTime}>Prep time: {data.prepTimeMinutes}min</p>
-        <p className={styles.recipeCardCookTime}>Cook time: {data.cookTimeMinutes}min</p>
+        <p className={styles.recipeCardPrepTime}>Cook time: {data.prepTimeMinutes + data.cookTimeMinutes}min</p>
         <p className={styles.recipeCardDifficulty}>Diffulty: {data.difficulty}</p>
         <p className={styles.recipeCardCuisine}>Cuisine: {data.cuisine}</p>
       </div>

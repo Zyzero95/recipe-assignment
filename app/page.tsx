@@ -1,4 +1,4 @@
-import RecipeCard from "./Components/RecipeCard";
+import RecipeCard from "./Components/recipecard";
 import fetchRecipes from "./Scripts/fetch";
 import styles from "./home.module.css";
 
