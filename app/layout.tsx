@@ -30,8 +30,9 @@ export default function RootLayout({
         <Header />
         {children}
         <header>
-          <Link href=""/>
+          <NavigationLinks />
         </header>
+        {children}
       </body>
     </html>
   );
