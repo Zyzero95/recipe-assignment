@@ -1,0 +1,28 @@
+.main {
+    display: grid;
+    justify-content: center;
+  
+    ul {
+      list-style: none;
+    }
+
+    .searchAndFilterSection {
+        justify-self: center;
+        margin-top: 0.5rem;
+
+        label {
+            font-size: 24px;
+        }
+
+        input {
+            margin-left: 0.5rem;
+        }
+
+        .filterLabel {
+            margin-left: 0.5rem;
+        }
+        select {
+            margin-left: 0.5rem;
+        }
+    }
+  }

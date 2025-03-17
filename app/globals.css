@@ -27,8 +27,3 @@
   --brown: rgb(161, 108, 44);
   --light-red: rgb(196, 98, 113);
 }
-
-main {
-  display: grid;
-  justify-content: center;
-}
