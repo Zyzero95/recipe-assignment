@@ -1,4 +1,4 @@
-import RecipeCard from "./Components/RecipeCard";
+import RecipeCard from "./Components/recipecard";
 import fetchRecipes from "./Scripts/fetch";
 
 export default async function Home() {

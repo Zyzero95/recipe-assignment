@@ -1,6 +1,5 @@
 import styles from "./header.module.css";
-import NavigationLinks from ./navigationlinks.tsx
-
+import NavigationLinks from "./navigationlinks"
 export default function Header() {
 
 
