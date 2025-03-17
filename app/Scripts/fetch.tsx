@@ -1,12 +1,8 @@
-import { Recipe } from "../Interfaces/interfaces";
-
-const API_URL = 'https://dummyjson.com/recipes?limit=10';
-
-
-export default async function fetchRecipes() {
-  
-  try {
-    const res = await fetch(API_URL);
+import { Recipe, RecipeResponse } from "../Interfaces/interfaces";
+let recipeCache: Recipe[] = [];
+let lastUpdate: number = 0;
+const MAX_AGE: number = 3600000; //1 hour in ms
+const API_ENDPOINT: string = "https://dummyjson.com/recipes";
     if (!res.ok){
         throw new Error(`Response status: ${res.status}`);
     }
