@@ -3,6 +3,13 @@ let recipeCache: Recipe[] = [];
 let lastUpdate: number = 0;
 const MAX_AGE: number = 3600000; //1 hour in ms
 const API_ENDPOINT: string = "https://dummyjson.com/recipes";
+
+
+export default async function fetchRecipes(): Promise<Recipe[]> {
+  await updateRecipeData();
+  return recipeCache;
+}
+
 export async function fetchRecipe(id: number): Promise<Recipe> {
   await updateRecipeData();
   if(id >= recipeCache.length)
