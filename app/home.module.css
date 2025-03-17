@@ -1,6 +1,7 @@
 .main {
     display: grid;
     justify-content: center;
+    background: linear-gradient(to left, var(--light-red), var(--beige));
   
     ul {
       list-style: none;
