@@ -3,6 +3,13 @@ let recipeCache: Recipe[] = [];
 let lastUpdate: number = 0;
 const MAX_AGE: number = 3600000; //1 hour in ms
 const API_ENDPOINT: string = "https://dummyjson.com/recipes";
+export async function fetchRecipe(id: number): Promise<Recipe> {
+  await updateRecipeData();
+  if(id >= recipeCache.length)
+    throw new Error("Invalid ID");
+  return recipeCache[id];
+}
+
 //Will update the recipe data if the current data is old or missing.
 async function updateRecipeData() {
   if(((Date.now() - lastUpdate) > MAX_AGE ) && (lastUpdate !== 0))
