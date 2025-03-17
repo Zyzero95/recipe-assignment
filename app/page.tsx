@@ -6,7 +6,15 @@ export default async function Home() {
   const data = await fetchRecipes();
   return (
     <main>
-      {data?.map((recipe) => <RecipeCard key={recipe.id} data={recipe}/>)}
+      <section>
+        <form>
+          <label htmlFor="mealName">Meal name:</label>
+          <input></input>
+        </form>
+      </section>
+      <ul>
+        <li>{data?.map((recipe) => <RecipeCard key={recipe.id} data={recipe}/>)}</li>
+      </ul>
     </main>
   );
 }

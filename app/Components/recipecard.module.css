@@ -1,0 +1,63 @@
+
+.recipeCardLink {
+    text-decoration: none;
+    margin: 0.5rem;
+    color: black;
+}
+.recipeCardWrapper {
+    display: grid;
+    grid-template-columns: 0.5fr auto;
+    grid-template-rows: repeat(8, auto);
+    width: 70vw;
+    height: 30vh;
+    border: 1px solid black;
+
+    .imgFig {
+        width: 30vw;
+        grid-column: 1;
+        grid-row: span 8;
+        position: relative;
+        img {
+            object-fit: cover;
+        }
+    }
+    
+    .recipeCardTitle {
+        align-self: center;
+        margin-left: 0.5rem;
+    }
+    
+    .recipeCardRating {
+        margin-left: 0.5rem;
+        align-self: center;
+    }
+    
+    .recipeCardTagWrapper{
+        display: grid;
+        margin-left: 0.5rem;
+        width: 30%;
+        align-items: center;
+        grid-template-columns: repeat(3, auto);
+    }
+    
+    .recipeCardMealWrapper {
+        margin-left: 0.5rem;
+        display: grid;
+        align-items: center;
+        width: 20%;
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(2, auto);
+        .recipeCardMealHeading {
+            grid-column: span 2;
+        }
+    }
+    
+    .recipeCardPrepTime,
+    .recipeCardCookTime,
+    .recipeCardDifficulty,
+    .recipeCardCuisine {
+        margin-left: 0.5rem;
+        align-self: center;
+    }
+}
+
