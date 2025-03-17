@@ -1,4 +1,5 @@
 import styles from "./header.module.css";
+import NavigationLinks from ./navigationlinks.tsx
 
 export default function Header() {
 
@@ -8,7 +9,7 @@ export default function Header() {
             <h1>Titel?</h1>
 
             <nav className={styles.navMenu}>
-                
+                <NavigationLinks />
             </nav>
 
         </header>
