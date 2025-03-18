@@ -1,6 +1,8 @@
 
+import { Fanwood_Text } from "next/font/google";
 import styles from "./page.module.css";
-
+import Image from "next/image";
+import avocado from "../../public/avocado.jpg";
 
 export default function About() {
   return (
@@ -23,6 +25,16 @@ export default function About() {
           urna tellus tincidunt ante, et efficitur turpis elit ut felis. Fusce dui ex, consequat sed massa non, rutrum ullamcorper mauris. 
           Nullam mollis ex ac est blandit, ut sollicitudin turpis finibus. Nam eu elementum mi. </p>
       </article>
+
+      <Image 
+        className={styles.foodImg}
+        src={avocado}
+        alt="food"
+        width={300} 
+        height={200}
+      />
+
+      
 
     </main>
   )
