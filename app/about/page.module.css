@@ -1,0 +1,11 @@
+.aboutMain {
+    padding: 2rem 4rem;
+}
+
+.aboutArticle {
+    margin: 2rem 0 3rem 0;
+    p {
+        padding-top: 1rem;
+    }
+}
+
