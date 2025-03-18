@@ -1,4 +1,4 @@
-export default async function Page({ params }: { params: Promise<{ id: string }> }) {
-    const resolvedParams = await params;
-    return <h1>Recipe id: {resolvedParams.id}</h1>
+export default async function Page({ params }: { params: Promise<{ id: number }> }) {
+    const id: number = (await params).id;
+    return <h1>Recipe id: {id}</h1>
 }
