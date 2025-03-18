@@ -10,7 +10,7 @@
     grid-template-rows: repeat(7, auto);
     width: 60vw;
     height: 30vh;
-    border: 1px solid black;
+    border: 4px solid black;
     border-radius: 25px;
     overflow: hidden;
 
@@ -37,24 +37,31 @@
     .recipeCardTagWrapper{
         display: grid;
         margin-left: 0.5rem;
-        width: 40%;
         align-items: center;
-        grid-template-columns: repeat(3, auto);
+        width: fit-content;
+        grid-template-rows: repeat(2, auto);
+        h4 {
+            grid-row: 2;
+            padding: 2px;
+        }
     }
     
     .recipeCardMealWrapper {
         margin-left: 0.5rem;
         display: grid;
         align-items: center;
-        width: 20%;
-        grid-template-columns: repeat(2, auto);
+        width: 30%;
+        grid-template-columns: repeat(auto-fit, minmax(0px, auto));
         grid-template-rows: repeat(2, auto);
         .recipeCardMealHeading {
             grid-column: span 2;
         }
+
+        h4 {
+            grid-row: 2;
+        }
     }
     
-    .recipeCardPrepTime,
     .recipeCardCookTime,
     .recipeCardDifficulty,
     .recipeCardCuisine {
