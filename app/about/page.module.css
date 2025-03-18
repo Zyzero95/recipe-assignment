@@ -1,0 +1,38 @@
+.aboutMain {
+    padding: 2rem 6rem;
+    background: var(--dark-red);
+    font-family: Geist, sans-serif;
+    min-height: 100vh;
+    h2 {
+        color: var(--off-white);
+        text-align: center;
+    }
+}
+
+
+.aboutArticle {
+    margin: 2rem 0 1rem 0;
+    /* border: 2px solid var(--dark-charcoal); */
+    border-radius: 1rem;
+    padding: 2rem 3rem;
+    background-color: var(--off-white);
+    p {
+        padding-top: 1rem;
+    }
+}
+
+.foodImg {
+    display: block;
+    margin: auto;
+    margin-top: 3rem;
+    width: 15vw;
+    height: auto;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 900px) {
+    .foodImg {
+        width: 40vw;
+    }
+}
+

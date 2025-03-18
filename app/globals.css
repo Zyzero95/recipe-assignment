@@ -27,3 +27,7 @@
   --brown: rgb(161, 108, 44);
   --light-red: rgb(196, 98, 113);
 }
+
+body {
+  min-height: 100vh;
+}
