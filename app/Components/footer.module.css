@@ -1,31 +1,40 @@
 .footer {
-    padding: 1rem;
+    padding: 2rem;
     background-color: var(--dark-red);
     color: var(--off-white);
     display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
 }
 
-.navMenu ul {
+.footer>section {
+    flex: 0 1 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.navigation ul {
     list-style: none;
     display: flex;
     flex-direction: column;
-    margin-top: 1rem;
-
+    margin-top: 0.5rem;
+    align-items: center;
 }
 
-.navMenu li {
-    padding: 1rem 0;
+.navigation li {
+    padding: 0.5rem 0;
 }
 
-.navMenu a {
+.navigation a {
     color: var(--off-white);
     text-decoration: none;
     padding: 0.8rem 2rem;
     border-radius: 5px;
 }
 
-.navMenu a:hover {
+.navigation a:hover {
     background-color: var(--light-red);
 }

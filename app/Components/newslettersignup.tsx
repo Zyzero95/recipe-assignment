@@ -6,6 +6,7 @@ export default function NewsletterSignup() {
             <form>
                 <label htmlFor="email-newsletter"></label>
                 <input id="email-newsletter" name="email-newsletter" />
+                <button id="submit" formAction="/">Sign up</button>
             </form>
         </>
     )
