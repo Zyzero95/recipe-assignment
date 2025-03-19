@@ -18,7 +18,7 @@
     "next": "15.2.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "use-debounce": "^10.0.4"
+    "ts-node": "^10.9.2"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.26.9",
