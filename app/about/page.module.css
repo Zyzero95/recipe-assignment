@@ -34,5 +34,8 @@
     .foodImg {
         width: 40vw;
     }
+    .aboutMain {
+        padding: 2rem 1.5rem;
+    }
 }
 
