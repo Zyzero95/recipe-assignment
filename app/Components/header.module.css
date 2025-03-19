@@ -1,6 +1,6 @@
-
 .header {
     padding: 1rem;
+    padding-top: 2rem;
     background-color: var(--dark-charcoal);
     color: var(--off-white);
     display: flex;
@@ -12,11 +12,11 @@
 .navMenu ul {
     list-style: none;
     display: flex;
-    margin-top: 1rem;   
+    margin-top: 1rem;
 }
 
 .navMenu li {
-   padding: 1rem 0; 
+    padding: 1rem 0;
 }
 
 .navMenu a {
@@ -24,13 +24,17 @@
     text-decoration: none;
     padding: 0.8rem 2rem;
     border-radius: 5px;
-    
+
 }
 
 .navMenu a:hover {
     background-color: var(--dark-red);
     color: var(--off-white);
 }
+
+
+
+/* mobile menu */
 
 .smallMenu {
     display: none;
@@ -41,111 +45,114 @@
         display: none;
     }
 
-    
-/* Hamburger menu */
-.nav {
-	width: 100vw;
-    height: 100vh;
-    position: fixed;
-    background-color: var(--dark-charcoal);
-    align-self: flex-start;
-    z-index: 100;
+    .header {
+        padding-bottom: 0;
+        border-bottom: 2px solid var(--dark-charcoal);
+    }
+
+
+    /* Hamburger menu */
+    .nav {
+        width: 100vw;
+        /* height: 100vh; */
+        /* position: fixed; */
+        background-color: var(--dark-charcoal);
+        align-self: flex-start;
+        /* z-index: 100; */
+    }
+
+    .smallMenu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .smallMenu a {
+        display: block;
+        padding: 2rem;
+        color: var(--off-white);
+        text-decoration: none;
+    }
+
+    .smallMenu a:hover {
+        background-color: var(--dark-red);
+    }
+
+    .nav ul {
+        list-style-type: none;
+        display: none;
+    }
+
+    /* label tag */ 
+    .hamb { 
+        cursor: pointer;
+        /* float: right; */
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+   
+    /* span tag */
+    .hambLine { 
+        background: white;
+        display: block;
+        height: 4px;
+        position: relative;
+        width: 30px;
+        border-radius: 3px;
+    } 
+
+    /*creates line above and under*/
+    .hambLine::before,
+    .hambLine::after {
+        background: white;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all .2s ease-out;
+        width: 100%;
+        border-radius: 3px;
+    }
+
+    .hambLine::before {
+        top: 8px;
+    }
+
+    .hambLine::after {
+        top: -8px;
+    }
+
+    /*checkbox*/
+    .sideMenu { 
+        display: none;
+    }
+
+    /* Toggle menu */
+    .sideMenu:checked~nav {
+        max-height: 100vh;
+    }
+
+    .sideMenu:checked~nav ul {
+        display: block;
+        text-align: center;  
+    }
+
+    /* animation of hamburger-menu */
+    .sideMenu:checked~.hamb .hambLine {
+        background: transparent;
+    }
+
+    .sideMenu:checked~.hamb .hambLine::before {
+        transform: rotate(-45deg);
+        top: 0;
+    }
+
+    .sideMenu:checked~.hamb .hambLine::after {
+        transform: rotate(45deg);
+        top: 0;
+    }
 }
-
-.smallMenu {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-}
-
-
-.smallMenu a {
-	display: block;
-    padding: 2rem;
-    color: var(--off-white);
-    text-decoration: none;
-}
-
-.smallMenu a:hover{
-    background-color: var(--dark-red);
-}
-
-.nav {
-    max-height: 0;
-    transition: max-height .5s ease-out;
-    margin-top: 5rem;
-}
-
-.nav ul {
-	list-style-type: none;
-    display: none;   
-}
-
-.hamb{
-    cursor: pointer;
-    float: right;
-    padding: 2rem;
-}/* Style label tag */
-
-.hambLine {
-    background: white;
-    display: block;
-    height: 4px;
-    position: relative;
-    width: 30px;
-    border-radius: 3px;
-} /* Style span tag */
-
-/*creates line above and under*/
-.hambLine::before,
-.hambLine::after{
-    background: white;
-    content: '';
-    display: block;
-    height: 100%;
-    position: absolute;
-    transition: all .2s ease-out;
-    width: 100%;
-    border-radius: 3px;
-}
-.hambLine::before{
-    top: 8px;
-}
-.hambLine::after{
-    top: -8px;
-}
-
-.sideMenu {
-    display: none;
-} /* Hide checkbox */
-
-/* Toggle menu icon */
-.sideMenu:checked ~ nav{
-    max-height: 100vh;
-}
-
-.sideMenu:checked ~ nav ul {
-    display: block;
-    text-align: center;
-        
-}
-
-
-/* animation of hamburger-menu */
-.sideMenu:checked ~ .hamb .hambLine {
-    background: transparent;
-}
-.sideMenu:checked ~ .hamb .hambLine::before {
-    transform: rotate(-45deg);
-    top:0;
-}
-.sideMenu:checked ~ .hamb .hambLine::after {
-    transform: rotate(45deg);
-    top:0;
-}
-}
-
-
-
-
-
