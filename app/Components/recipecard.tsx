@@ -9,6 +9,7 @@ export interface RecipeData{
   data: Recipe
 }
 
+// Component for rendering recipes
 function RecipeCard({ data }: RecipeData) {
   return (
     <Link className={styles.recipeCardLink} href="">

@@ -2,6 +2,7 @@
 import { useSearchParams, usePathname, useRouter } from "next/navigation"
 import { useDebouncedCallback } from "use-debounce";
 
+// uses hooks to find out when user input is coming in, and storing that data for the Query component to use
 const Search = () => {
   const searchparams = useSearchParams();
   const pathname = usePathname();
@@ -17,7 +18,7 @@ const Search = () => {
     }
     replace(`${pathname}?${params.toString()}`);
   }, 300);
-  
+
   return (
     <div>
       <label htmlFor="mealName">Meal name:</label>
@@ -27,15 +28,3 @@ const Search = () => {
 }
 
 export default Search
-
-// const handleSearch = useDebouncedCallback((value: string) => {
-//   const params = new URLSearchParams(searchParams);
-//   setIsTyping(value.trim() !== "");
-//       if(value) {
-//           params.set("query", value);
-//       }
-//       else {
-//           params.delete("query");
-//       }
-//       replace(`${pathName}?${params.toString()}`, {scroll: false});
-// }, 300);

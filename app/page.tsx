@@ -3,7 +3,8 @@ import styles from "./home.module.css";
 import SearchAndFilter from "./Components/searchandfilter";
 import Query from "./Components/query";
 
-export default async function Home({searchParams}:  {searchParams?: {query?: string;}}) {
+// Home Page. Using components to render it on page.
+export default async function Home({searchParams}:  {searchParams: Promise<{query: string | undefined}>}) {
   
   const data = await fetchRecipes();
 

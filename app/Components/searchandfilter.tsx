@@ -1,6 +1,7 @@
 import styles from "../home.module.css";
 import Search from "../Components/search";
 
+// Component that renders Search and Filter features.
 export default function SearchAndFilter() {
   return (
     <section className={styles.searchAndFilterSection}>
