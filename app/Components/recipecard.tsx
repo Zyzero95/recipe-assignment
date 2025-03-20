@@ -12,7 +12,7 @@ export interface RecipeData{
 // Component for rendering recipes
 function RecipeCard({ data }: RecipeData) {
   return (
-    <Link className={styles.recipeCardLink} href="">
+    <Link className={styles.recipeCardLink} href={`/${data.id}`}>
       <div className={styles.recipeCardWrapper}>
         <figure className={styles.imgFig}>
           <Image 
