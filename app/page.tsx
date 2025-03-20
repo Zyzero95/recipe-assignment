@@ -1,16 +1,18 @@
-import RecipeCard from "./Components/recipecard";
 import fetchRecipes from "./Scripts/fetch";
 import styles from "./home.module.css";
 import SearchAndFilter from "./Components/searchandfilter";
+import Query from "./Components/query";
 
-export default async function Home() {
-
+// Home Page. Using components to render it on page.
+export default async function Home({searchParams}:  {searchParams: Promise<{query: string | undefined}>}) {
+  
   const data = await fetchRecipes();
+
   return (
     <main className={styles.main}>
       <SearchAndFilter />
       <ul>
-        <li>{data?.map((recipe) => <RecipeCard key={recipe.id} data={recipe}/>)}</li>
+        <li><Query searchParams={searchParams} data={data}/></li>
       </ul>
     </main>
   );

@@ -9,9 +9,10 @@ export interface RecipeData{
   data: Recipe
 }
 
+// Component for rendering recipes
 function RecipeCard({ data }: RecipeData) {
   return (
-    <Link className={styles.recipeCardLink} href="">
+    <Link className={styles.recipeCardLink} href={`/${data.id}`}>
       <div className={styles.recipeCardWrapper}>
         <figure className={styles.imgFig}>
           <Image 
@@ -21,7 +22,7 @@ function RecipeCard({ data }: RecipeData) {
           />
         </figure>
         <h2 className={styles.recipeCardTitle}>{data.name}</h2>
-        <h3 className={styles.recipeCardRating}>{data.rating}<Star size={16} fill="yellow" color="yellow"/> <MessageSquare size={16}/> {data.reviewCount} </h3>
+        <h3 className={styles.recipeCardRating}>{data.rating}<Star size={16} fill="yellow" color="yellow"/>{data.reviewCount}<MessageSquare size={16}/></h3>
         <section className={styles.recipeCardTagWrapper}>
           <h3 className={styles.recipeCardTagHeading}><Tag size={16}/></h3>
           {data.tags.map((tag) => <h4 className={styles.recipeCardTag} key={tag}>{tag}</h4>)}

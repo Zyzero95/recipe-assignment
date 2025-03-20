@@ -1,11 +1,12 @@
 import styles from "../home.module.css";
+import Search from "../Components/search";
 
+// Component that renders Search and Filter features.
 export default function SearchAndFilter() {
   return (
     <section className={styles.searchAndFilterSection}>
         <form>
-          <label htmlFor="mealName">Meal name:</label>
-          <input type="text" name="mealName" id="mealName" placeholder="Ex. Vegetarian Stir-Fry"></input>
+          <Search/>
           <label htmlFor="filterSelect" className={styles.filterLabel}>Filter</label>
           <select>
             <option>filter by name</option>
