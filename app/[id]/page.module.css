@@ -9,6 +9,25 @@
     flex-wrap: wrap;
     align-items: center;
     column-gap: 2em;
+    > *{
+        width: var(--image-width);
+        margin: 2em;
+        background-color: var(--off-white);
+        border: 2px solid var(--dark-gray);
+        border-radius: 10px;
+        box-shadow: 4px 2px 20px;
+        overflow: hidden;
+    }
+    > .imageCard{
+        height: var(--image-height);
+        > *{
+            height: var(--image-height);
+            width: var(--image-width);
+        }
+    }
+    > .textCard{
+        padding: 1.5em;
+    }
 }
 .tagList{
     display: flex;
