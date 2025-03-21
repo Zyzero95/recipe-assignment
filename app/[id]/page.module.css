@@ -2,6 +2,14 @@
     --image-width: clamp(250px, 90vw, 500px);
     --image-height: clamp(250px, 90vw, 500px);
 }
+.flexLine{
+    background: linear-gradient(to left, var(--light-red), var(--beige));
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 2em;
+}
 .tagList{
     display: flex;
     flex-wrap: wrap;
