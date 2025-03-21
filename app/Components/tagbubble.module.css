@@ -1,0 +1,8 @@
+.bubble{
+    background-color: var(--dark-red);
+    color: var(--off-white);
+    width: fit-content;
+    padding: 0.1em 0.3em;
+    border-radius: 500px;
+    box-shadow: 0.1em 0.1em 0.1em var(--dark-charcoal);
+}
