@@ -1,3 +1,7 @@
+:root{
+    --image-width: clamp(250px, 90vw, 500px);
+    --image-height: clamp(250px, 90vw, 500px);
+}
 .tagList{
     display: flex;
     flex-wrap: wrap;
