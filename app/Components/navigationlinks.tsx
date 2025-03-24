@@ -12,7 +12,6 @@ export default function NavigationLinks() {
     e.preventDefault();
     const number: number = Math.floor(Math.random() * 50) + 1;
     randomNr = number.toString();
-    console.log("RANDOM", randomNr);
 
     router.push(randomNr);
   }
