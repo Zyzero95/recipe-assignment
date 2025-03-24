@@ -15,13 +15,12 @@ describe('NewsletterSignup', () => {
         expect(screen.getByRole('button')).toHaveTextContent('Sign me up')
     })
 
-    it('shows success message when valid email submits', async () => {
+    it('shows success message when valid email is submitted', async () => {
         const thankYouMsg = 'Thank you for signing up to our recipe newsletter';
         //assumed axios response format
         //Arrange 
         mockedAxios.post.mockResolvedValueOnce({ data: { message: thankYouMsg } });
         render(<NewsletterSignup />);
-        screen.debug();
         //Act
         await userEvent.type(screen.getByLabelText(/email/i), 'chili@curry.com');
         await userEvent.click(screen.getByText(/Sign me up/i));
@@ -31,7 +30,7 @@ describe('NewsletterSignup', () => {
         })
     })
 
-    it('shows error message when invalid', async () => {
+    it('shows error message when email is invalid', async () => {
         const errorMsg = 'Please enter a valid email address';
         //Arrange 
         render(<NewsletterSignup />)
