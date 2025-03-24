@@ -31,6 +31,8 @@
   --card-border : 2px solid var(--dark-gray);
   --card-border-radius: 10px;
   --card-box-shadow: 4px 2px 20px;
+
+  --page-background: linear-gradient(to left, var(--light-red), var(--dark-red));
 }
 
 body {
