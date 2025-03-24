@@ -28,7 +28,7 @@
   --yellow: rgb(224, 197, 58);
   --light-red: rgb(196, 98, 113);
 
-  --card-border : 2px solid var(--dark-gray);
+  --card-border : 2px solid var(--yellow);
   --card-border-radius: 10px;
   --card-box-shadow: 4px 2px 20px;
 
