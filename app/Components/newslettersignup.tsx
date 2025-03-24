@@ -7,19 +7,16 @@ import { NewsletterSchema } from '@/app/validations/newsletter'
 export default function NewsletterSignup() {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
-    const [error, setError] = useState('');
+    const [errorMsg, setErrorMsg] = useState('');
     const thankYouMsg = 'Thank you for signing up to our recipe newsletter';
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         //reset these on every call
-        setError('');
+        setErrorMsg('');
         setMessage('');
 
         try {
-
-            console.log('Attempting to validate:', { email });
-
 
             const validated = NewsletterSchema.parse({ email });
             await axios.post('/api/newsletter', validated);
@@ -29,8 +26,7 @@ export default function NewsletterSignup() {
 
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (error) {
-            console.log(error);
-            setError('Please enter a valid email address');
+            setErrorMsg('Please enter a valid email address');
         }
     }
 
@@ -50,7 +46,7 @@ export default function NewsletterSignup() {
                 <button id="submit" type="submit">Sign me up</button>
             </form>
             {message && <p role="status" className="success">{message}</p>}
-            {error && <p role="alert" className="error">{error}</p>}
+            {errorMsg && <p role="alert" className="error">{errorMsg}</p>}
         </>
     )
 }

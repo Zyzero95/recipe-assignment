@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event';
 import NewsletterSignup from '../newslettersignup'
 import axios from 'axios';
@@ -21,6 +21,7 @@ describe('NewsletterSignup', () => {
         //Arrange 
         mockedAxios.post.mockResolvedValueOnce({ data: { message: thankYouMsg } });
         render(<NewsletterSignup />);
+        screen.debug();
         //Act
         await userEvent.type(screen.getByLabelText(/email/i), 'chili@curry.com');
         await userEvent.click(screen.getByText(/Sign me up/i));
@@ -31,14 +32,16 @@ describe('NewsletterSignup', () => {
     })
 
     it('shows error message when invalid', async () => {
+        const errorMsg = 'Please enter a valid email address';
         //Arrange 
         render(<NewsletterSignup />)
+        // screen.debug();
         //Act
-        await userEvent.type(screen.getByRole('textbox'), 'invalid-email');
+        await userEvent.type(screen.getByRole('textbox'), 'you@idjidf');
         await userEvent.click(screen.getByRole('button'));
         //Assert
         await waitFor(() => {
-            expect(screen.getByRole('alert')).toHaveTextContent('Please enter a valid email address')
+            expect(screen.getByText(errorMsg)).toBeInTheDocument();
         })
     })
 })
