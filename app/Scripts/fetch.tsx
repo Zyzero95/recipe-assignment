@@ -12,6 +12,7 @@ export default async function fetchRecipes(): Promise<Recipe[]> {
 
 export async function fetchRecipe(id: number): Promise<Recipe> {
   await updateRecipeData();
+  id--;
   if(id >= recipeCache.length)
     throw new Error("Invalid ID");
   return recipeCache[id];
