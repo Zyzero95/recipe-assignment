@@ -1,11 +1,12 @@
 .aboutMain {
     padding: 2rem 6rem;
     background: var(--dark-red);
-    font-family: Geist, sans-serif;
+    font-family: var(--font-main-text);
     min-height: 100vh;
     h2 {
         color: var(--off-white);
         text-align: center;
+        font-family: var(--font-main-heading);
     }
 }
 
