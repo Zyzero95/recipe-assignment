@@ -5,9 +5,14 @@ export default function Header() {
 
 
     const Checking = (e: any) => {
-        e.preventDefault();
-        console.log("checked?");
+        if (e.keyCode === 13) {
+            e.preventDefault();
+
+            console.log("checked?");
+        }
+
     }
+
 
 
     return (
@@ -18,11 +23,11 @@ export default function Header() {
             <h1>The Fabulous Recipe Collection</h1>
 
             {/* Mobile menu */}
-            <div className={styles.smallMenu} tabIndex={0} onClick={Checking}>
+            <div className={styles.smallMenu} tabIndex={0} onKeyDown={Checking}>
                 <input className={styles.sideMenu} type="checkbox" id="side-menu" />
                 <label className={styles.hamb} htmlFor="side-menu">
                     {/* Span becomes "burger lines" */}
-                    <span className={styles.hambLine}></span> 
+                    <span className={styles.hambLine}></span>
                 </label>
 
                 <nav className={styles.nav}><NavigationLinks /></nav>
