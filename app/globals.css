@@ -26,6 +26,10 @@
   --dark-red: rgb(163, 42, 55);
   --brown: rgb(161, 108, 44);
   --light-red: rgb(196, 98, 113);
+
+  --tag-color-default: var(--dark-red);
+  --tag-color-cuisine: var(--dark-red);
+  --tag-color-meal: var(--dark-red);
 }
 
 body {
