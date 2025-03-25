@@ -6,19 +6,52 @@ import axios from 'axios';
 jest.mock('axios');
 const mockedAxios = axios as jest.Mocked<typeof axios>;
 
-describe('NewsletterSignup', () => {
-    it('will render the newsletter signup form', () => {
-        render(<NewsletterSignup />)
+describe('Newsletter signup form', () => {
+    const thankYouMsg = 'Thank you for signing up to our recipe newsletter';
+    const errorMsg = 'Please enter a valid email address';
 
-        expect(screen.getByRole('heading')).toHaveTextContent('Sign up for new recipes')
-        expect(screen.getByRole('textbox')).toHaveAttribute('id', 'email-newsletter')
-        expect(screen.getByRole('button')).toHaveTextContent('Sign me up')
-    })
+    beforeEach(() => {
+        Object.defineProperty(HTMLInputElement.prototype, 'checkValidity', {
+            writable: true,
+            value: function (this: HTMLInputElement) {
+                return this.value.includes('@');
+            }
+        });
+    });
+
+    it('uses HTML5 validation', async () => {
+        render(<NewsletterSignup />)
+        const emailInput = screen.getByRole('textbox') as HTMLInputElement;
+
+        // invalid email address
+        await userEvent.type(emailInput, 'not-an-email');
+        expect(emailInput.checkValidity()).toBe(false);
+
+        // valid email address
+        await userEvent.clear(emailInput);
+        await userEvent.type(emailInput, 'valid@email.com');
+        expect(emailInput.checkValidity()).toBe(true);
+    });
+
+    it('shows browser validation message for empty input', async () => {
+        render(<NewsletterSignup />);
+
+        const emailInput = screen.getByLabelText('Email:') as HTMLInputElement;
+        const submitButton = screen.getByRole('button', { name: 'Sign me up' });
+
+        expect(emailInput.value).toBe('');
+
+        // attempt submitting empty form
+        await userEvent.click(submitButton);
+        expect(emailInput).toBeInvalid();
+        expect(emailInput.validationMessage).not.toBe('');
+        expect(screen.queryByRole('status')).not.toBeInTheDocument();
+        expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+    });
 
     it('shows success message when valid email is submitted', async () => {
-        const thankYouMsg = 'Thank you for signing up to our recipe newsletter';
+        //Arrange
         //assumed axios response format
-        //Arrange 
         mockedAxios.post.mockResolvedValueOnce({ data: { message: thankYouMsg } });
         render(<NewsletterSignup />);
         //Act
@@ -28,13 +61,11 @@ describe('NewsletterSignup', () => {
         await waitFor(() => {
             expect(screen.getByText(thankYouMsg)).toBeInTheDocument();
         })
-    })
+    });
 
     it('shows error message when email is invalid', async () => {
-        const errorMsg = 'Please enter a valid email address';
         //Arrange 
         render(<NewsletterSignup />)
-        // screen.debug();
         //Act
         await userEvent.type(screen.getByRole('textbox'), 'you@idjidf');
         await userEvent.click(screen.getByRole('button'));
@@ -44,3 +75,14 @@ describe('NewsletterSignup', () => {
         })
     })
 })
+
+describe('NewsletterSignup component', () => {
+    it('will render the newsletter signup form elements', () => {
+        render(<NewsletterSignup />)
+
+        expect(screen.getByRole('heading')).toHaveTextContent('Sign up for new recipes')
+        expect(screen.getByRole('textbox')).toHaveAttribute('id', 'email-newsletter')
+        expect(screen.getByRole('button')).toHaveTextContent('Sign me up')
+    })
+});
+
