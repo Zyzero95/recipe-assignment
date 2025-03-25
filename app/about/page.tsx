@@ -6,7 +6,7 @@ import avocado from "../../public/avocado.jpg";
 
 export default function About() {
   return (
-    <main className={styles.aboutMain}>
+    <main className={styles.aboutMain} id="main">
       <h2>About</h2>
 
       <article className={styles.aboutArticle}>

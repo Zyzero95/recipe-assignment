@@ -14,7 +14,7 @@
 .aboutArticle {
     margin: 2rem 0 1rem 0;
     /* border: 2px solid var(--dark-charcoal); */
-    border-radius: 1rem;
+    border-radius: 10px;
     padding: 2rem 3rem;
     background-color: var(--off-white);
     p {
