@@ -11,7 +11,6 @@ export default function NewsletterSignup() {
     const [message, setMessage] = useState('');
     const [errorMsg, setErrorMsg] = useState('');
 
-    const thankYouMessage = 'Thank you for signing up to our recipe newsletter';
     const errorMessage = 'Please enter a valid email address';
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -20,7 +19,7 @@ export default function NewsletterSignup() {
         setErrorMsg('');
         setMessage('');
 
-        // browser native validation
+        // Layer 1: browser native validation
         const form = e.currentTarget as HTMLFormElement;
         if (!form.checkValidity()) {
             form.reportValidity();
@@ -28,16 +27,19 @@ export default function NewsletterSignup() {
         }
 
         try {
-
             const validated = NewsletterSchema.parse({ email });
-            await axios.post('/api/newsletter', validated);
-            setMessage(thankYouMessage);
-            //reset state
+            const response = await axios.post('/api/newsletter', validated);
+            setMessage(response.data.message);
+            //reset state when validated
             setEmail('');
 
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (error) {
-            setErrorMsg(errorMessage);
+            console.error('Form submission error:', error); // Debug log
+            if (axios.isAxiosError(error)) {
+                setErrorMsg(error.response?.data?.error);
+            } else {
+                setErrorMsg(errorMessage);
+            }
         }
     }
 
@@ -46,11 +48,11 @@ export default function NewsletterSignup() {
         e.preventDefault();
         const input = e.target as HTMLInputElement;
 
-        if (input.validity.valueMissing || input.validity.typeMismatch) {
+        if (input.validity.valueMissing/*  || input.validity.typeMismatch */) {
             input.setCustomValidity(errorMessage);
-        } /* else if(input.validity.typeMismatch) {
-            input.setCustomValidity(errorMessage);
-        } */
+        } else if (input.validity.typeMismatch) {
+            input.setCustomValidity('other errorMessage');
+        }
     }
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -70,8 +72,8 @@ export default function NewsletterSignup() {
                 <input type="email"
                     id="email-newsletter"
                     name="email-newsletter"
-                    // onInvalid={handleInvalidEmail}
-                    // onInput={handleInput}
+                    onInvalid={handleInvalidEmail}
+                    onInput={handleInput}
                     onChange={(e) => setEmail(e.target.value)}
                     value={email}
                     required
