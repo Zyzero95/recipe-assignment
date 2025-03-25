@@ -9,8 +9,49 @@
     font-family: Roboto, sans-serif;
 }
 
+.skipLink {
+    left: 2rem;
+    color: var(--off-white);
+    border: 2px solid var(--off-white);
+    padding: 1rem;
+    text-decoration: none;
+    position: absolute;
+    transform: translateY(-300%);
+}
+
+.skipLink:focus {
+    transform: translateY(0%);
+}
+
+@media screen and (max-width: 900px) {
+    .skipLink {
+        left: 0;
+        margin-bottom: 1rem;
+        padding: .2rem;
+    }
+
+    .skipLink:focus {
+        position: relative;
+    }
+
+}
+
+/* @media screen and (max-width: 900px) {
+    .skipLink:focus {
+        padding: .2rem;
+        top: 6rem;
+    }
+}
+
+@media screen and (max-width: 522px) {
+    .skipLink:focus {
+        top: 9rem;
+    }
+} */
+
 .header h1 {
     font-family: merienda;
+    color: var(--yellow);
 }
 
 .navMenu ul {
@@ -51,6 +92,10 @@
     .header {
         padding-bottom: 0;
         border-bottom: 2px solid var(--dark-charcoal);
+    }
+
+    .header h1 {
+        text-align: center;
     }
 
 

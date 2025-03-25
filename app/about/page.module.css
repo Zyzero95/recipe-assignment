@@ -1,11 +1,14 @@
 .aboutMain {
     padding: 2rem 6rem;
-    background: var(--dark-red);
+    background: var(--page-background);
     font-family: var(--font-main-text);
     min-height: 100vh;
     h2 {
         color: var(--off-white);
         text-align: center;
+        font-family: var(--font-main-heading);
+    }
+    h3 {
         font-family: var(--font-main-heading);
     }
 }
@@ -14,7 +17,9 @@
 .aboutArticle {
     margin: 2rem 0 1rem 0;
     /* border: 2px solid var(--dark-charcoal); */
-    border-radius: 10px;
+    border-radius: var(--card-border-radius);
+    border: var(--card-border);
+    box-shadow: var(--card-box-shadow);
     padding: 2rem 3rem;
     background-color: var(--off-white);
     p {
@@ -29,10 +34,19 @@
     width: 15vw;
     height: auto;
     border-radius: 50%;
+    border: var(--card-border);
+    
+}
+
+.foodImgDiv {
+    width: 15vw;
+    margin: auto;
+    border-radius: 50%;
+    box-shadow: var(--card-box-shadow);
 }
 
 @media screen and (max-width: 900px) {
-    .foodImg {
+    .foodImg, .foodImgDiv {
         width: 40vw;
     }
     .aboutMain {

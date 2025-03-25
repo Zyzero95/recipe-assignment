@@ -1,6 +1,13 @@
+"use client";
 import styles from "./header.module.css";
 import NavigationLinks from "./navigationlinks"
 export default function Header() {
+
+
+    const Checking = (e: any) => {
+        e.preventDefault();
+        console.log("checked?");
+    }
 
 
     return (
@@ -11,7 +18,7 @@ export default function Header() {
             <h1>The Fabulous Recipe Collection</h1>
 
             {/* Mobile menu */}
-            <div className={styles.smallMenu}>
+            <div className={styles.smallMenu} tabIndex={0} onClick={Checking}>
                 <input className={styles.sideMenu} type="checkbox" id="side-menu" />
                 <label className={styles.hamb} htmlFor="side-menu">
                     {/* Span becomes "burger lines" */}
