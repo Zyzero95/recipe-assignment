@@ -21,7 +21,6 @@ const Search = () => {
 
   return (
     <div>
-      <label htmlFor="mealName">Meal name:</label>
       <input type="text" name="mealName" id="mealName" defaultValue={searchparams.get("query")?.toString()} onChange={(e) => {handleSearch(e.target.value)}}></input>
     </div>
   )

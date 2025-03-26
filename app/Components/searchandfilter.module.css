@@ -1,0 +1,15 @@
+.searchAndFilterSection {
+    justify-self: center;
+    text-align: start;
+    margin-top: 0.5rem;
+    border: 2px solid var(--dark-charcoal);
+    border-radius: 25px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+
+    .searchLabel,
+    .filterLabel {
+        font-size: 1.5rem;
+    }
+}
