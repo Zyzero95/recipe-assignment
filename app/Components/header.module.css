@@ -36,19 +36,6 @@
 
 }
 
-/* @media screen and (max-width: 900px) {
-    .skipLink:focus {
-        padding: .2rem;
-        top: 6rem;
-    }
-}
-
-@media screen and (max-width: 522px) {
-    .skipLink:focus {
-        top: 9rem;
-    }
-} */
-
 .header h1 {
     font-family: merienda;
     color: var(--yellow);
@@ -68,14 +55,13 @@
     color: var(--off-white);
     text-decoration: none;
     padding: 0.8rem 2rem;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .navMenu a:hover {
     background-color: var(--dark-red);
     color: var(--off-white);
 }
-
 
 
 /* mobile menu */

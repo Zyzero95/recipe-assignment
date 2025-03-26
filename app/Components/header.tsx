@@ -1,7 +1,13 @@
 "use client";
 import styles from "./header.module.css";
 import NavigationLinks from "./navigationlinks"
+
+
+
+
 export default function Header() {
+
+ 
 
 
     const Checking = (e: any) => {
@@ -9,6 +15,9 @@ export default function Header() {
             e.preventDefault();
 
             console.log("checked?");
+            
+            let checkbox = document.getElementById('side-menu');
+          
         }
 
     }
