@@ -3,25 +3,15 @@ import styles from "./header.module.css";
 import NavigationLinks from "./navigationlinks"
 
 
-
-
 export default function Header() {
 
  
-
-
     const Checking = (e: any) => {
         if (e.keyCode === 13) {
             e.preventDefault();
-
-            console.log("checked?");
-            
-            let checkbox = document.getElementById('side-menu');
-          
+            document.getElementById("checkboxLabel")?.click();           
         }
-
     }
-
 
 
     return (
@@ -32,9 +22,9 @@ export default function Header() {
             <h1>The Fabulous Recipe Collection</h1>
 
             {/* Mobile menu */}
-            <div className={styles.smallMenu} tabIndex={0} onKeyDown={Checking}>
+            <div className={styles.smallMenu} >
                 <input className={styles.sideMenu} type="checkbox" id="side-menu" />
-                <label className={styles.hamb} htmlFor="side-menu">
+                <label className={styles.hamb} id="checkboxLabel" htmlFor="side-menu" tabIndex={0} onKeyDown={Checking} >
                     {/* Span becomes "burger lines" */}
                     <span className={styles.hambLine}></span>
                 </label>

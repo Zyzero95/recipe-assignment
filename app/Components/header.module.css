@@ -88,11 +88,8 @@
     /* Hamburger menu */
     .nav {
         width: 100vw;
-        /* height: 100vh; */
-        /* position: fixed; */
         background-color: var(--dark-charcoal);
         align-self: flex-start;
-        /* z-index: 100; */
     }
 
     .smallMenu {
