@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Recipe } from "../Interfaces/interfaces";
 import styles from "./recipecard.module.css"
 import { CookingPot, CircleGauge, Utensils, Star, MessageSquare, Tag } from "lucide-react";
+import Difficulty from "./recipe-fields/difficulty";
 
 export interface RecipeData{
   data: Recipe
@@ -32,7 +33,7 @@ function RecipeCard({ data }: RecipeData) {
           {data.mealType.map((type) => <h4 className={styles.recipeCardMeal} key={type}>{type}</h4>)}
         </section>
         <p className={styles.recipeCardCookTime}><CookingPot/> {data.prepTimeMinutes + data.cookTimeMinutes}min</p>
-        <p className={styles.recipeCardDifficulty}>Difficulty: <CircleGauge size={20} color={data.difficulty == "Easy"? "green" : (data.difficulty == "Medium" ? "yellow" : "red")}/></p>
+        <Difficulty data={data}/>
         <p className={styles.recipeCardCuisine}><Utensils size={20}/> {data.cuisine}</p>
       </div>
     </Link>
