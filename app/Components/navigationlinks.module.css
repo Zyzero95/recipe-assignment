@@ -1,0 +1,25 @@
+.navigation {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
+    align-items: left;
+    padding: 0;
+    margin: 0;
+}
+
+.navigation li {
+    padding-inline: 0;
+    padding-block: 0.2rem;
+}
+
+.navigation a {
+    color: var(--off-white);
+    text-decoration: none;
+    padding: 0.2rem 1rem;
+    border-radius: 0.3125rem;
+}
+
+.navigation a:hover {
+    background-color: var(--light-red);
+}

@@ -25,7 +25,14 @@
   --beige: rgb(218, 190, 170);
   --dark-red: rgb(163, 42, 55);
   --brown: rgb(161, 108, 44);
+  --yellow: rgb(224, 197, 58);
   --light-red: rgb(196, 98, 113);
+
+  --card-border : 2px solid var(--yellow);
+  --card-border-radius: 10px;
+  --card-box-shadow: 4px 2px 20px;
+
+  --page-background: linear-gradient(to left, var(--light-red), var(--dark-red));
 }
 
 body {
