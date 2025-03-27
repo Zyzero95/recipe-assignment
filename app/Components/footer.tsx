@@ -9,8 +9,10 @@ export default function Footer() {
                 <NewsletterSignup />
             </section>
             <section className={styles.navigation}>
-                <h4>Pages on the site</h4>
-                <NavigationLinks />
+                <div className="navigationContainer">
+                    <h3>Pages on the site</h3>
+                    <NavigationLinks />
+                </div>
             </section>
         </footer>
     )
