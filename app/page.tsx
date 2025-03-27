@@ -9,7 +9,7 @@ export default async function Home({searchParams}:  {searchParams: Promise<{quer
   const data = await fetchRecipes();
 
   return (
-    <main className={styles.main}>
+    <main className={styles.main} id="main">
       <SearchAndFilter />
       <ul>
         <li><Query searchParams={searchParams} data={data}/></li>
