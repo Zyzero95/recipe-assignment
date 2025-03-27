@@ -69,7 +69,8 @@ export default function NewsletterSignup() {
             <form onSubmit={handleSubmit} role="form" className={componentStyles.formSignUp} translate="no">
                 <label htmlFor="email-newsletter">Email:</label>
                 <span className={globalStyles.screenReaderOnly}>(required)</span>
-                <input type="email"
+                <input
+                    type="email"
                     id="email-newsletter"
                     name="email-newsletter"
                     onInvalid={handleInvalidEmail}
@@ -80,12 +81,20 @@ export default function NewsletterSignup() {
                     aria-required="true"
                     aria-label='Email for newsletter subscription'
                     aria-invalid={!!errorMsg}
-                    aria-describedby="email-error" // see errorMsg
+                    aria-describedby={errorMsg ? "email-error" : undefined}
                     placeholder="you@somedomain" />
                 <button id="submit" type="submit">Sign me up</button>
             </form>
-            {message && <p role="status" className="success" aria-live='polite'>{message}</p>}
-            {errorMsg && <p id="email-error" role="alert" className="error" aria-live='assertive'>{errorMsg}</p>}
+            {message && <p role="status" className="success" aria-live="polite">{message}</p>}
+            <p
+                id="email-error"
+                role="alert"
+                className="error"
+                aria-live="assertive"
+                hidden={!errorMsg}
+            >
+                {errorMsg || " "}
+            </p>
         </>
     )
 }

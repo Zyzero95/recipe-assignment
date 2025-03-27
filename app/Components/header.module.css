@@ -9,8 +9,36 @@
     font-family: Roboto, sans-serif;
 }
 
+.skipLink {
+    left: 2rem;
+    color: var(--off-white);
+    border: 2px solid var(--off-white);
+    padding: 1rem;
+    text-decoration: none;
+    position: absolute;
+    transform: translateY(-300%);
+}
+
+.skipLink:focus {
+    transform: translateY(0%);
+}
+
+@media screen and (max-width: 900px) {
+    .skipLink {
+        left: 0;
+        margin-bottom: 1rem;
+        padding: .2rem;
+    }
+
+    .skipLink:focus {
+        position: relative;
+    }
+
+}
+
 .header h1 {
     font-family: merienda;
+    color: var(--yellow);
 }
 
 .navMenu ul {
@@ -27,14 +55,13 @@
     color: var(--off-white);
     text-decoration: none;
     padding: 0.8rem 2rem;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .navMenu a:hover {
     background-color: var(--dark-red);
     color: var(--off-white);
 }
-
 
 
 /* mobile menu */
@@ -53,15 +80,16 @@
         border-bottom: 2px solid var(--dark-charcoal);
     }
 
+    .header h1 {
+        text-align: center;
+    }
+
 
     /* Hamburger menu */
     .nav {
         width: 100vw;
-        /* height: 100vh; */
-        /* position: fixed; */
         background-color: var(--dark-charcoal);
         align-self: flex-start;
-        /* z-index: 100; */
     }
 
     .smallMenu {

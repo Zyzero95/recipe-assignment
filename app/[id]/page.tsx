@@ -11,7 +11,7 @@ export default async function Page({ params }: { params: Promise<{ id: number }>
     const id: number = (await params).id;
     const activeRecipe: Recipe = await fetchRecipe(id);
     return (<>
-        <header className={styles.flexLine}>
+        <header className={styles.flexLine} id="main">
             <div className={styles.imageCard}>
                 <Image
                 src={activeRecipe.image}
