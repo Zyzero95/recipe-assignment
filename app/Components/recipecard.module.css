@@ -28,7 +28,43 @@
             object-fit: cover;
         }
     }
+    .recipeCardTitle {
+        align-self: center;
+        margin-left: 0.5rem;
+    }
+    
+    .recipeCardRating {
+        margin-left: 0.5rem;
+        align-self: center;
+    }
+    
+    .recipeCardTagWrapper{
+        display: grid;
+        margin-left: 0.5rem;
+        align-items: center;
+        width: fit-content;
+        h4 {
+            grid-row: 2;
+            padding: 2px;
+        }
+    }
+    
+    .recipeCardMealWrapper {
+        margin-left: 0.5rem;
+        display: grid;
+        align-items: center;
+        width: fit-content;
+        grid-template-columns: repeat(auto-fit, minmax(0px, auto));
+        grid-template-rows: repeat(2, auto);
+        .recipeCardMealHeading {
+            grid-column: span 2;
+        }
 
+        h4 {
+            grid-row: 2;
+            padding: 2px;
+        }
+    }
     .recipeCardCookTime,
     .recipeCardDifficulty,
     .recipeCardRating,
