@@ -5,6 +5,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import { ClockFading, Star } from "lucide-react";
 import CheckBoxList from "../Components/checkBoxList";
+import Tags from "../Components/recipe-fields/tags";
 
 export default async function Page({ params }: { params: Promise<{ id: number }> }) {
     const id: number = (await params).id;
@@ -22,7 +23,7 @@ export default async function Page({ params }: { params: Promise<{ id: number }>
                 <h1>{activeRecipe.name}</h1>
                 <ul className={styles.tagList}>
                     {activeRecipe.mealType.concat(activeRecipe.tags).map((mealType) => 
-                    <TagBubble tagName={mealType} key={mealType}/>)}
+                    <TagBubble tagName={mealType} key={mealType} color="var(--dark-red)"/>)}
                 </ul>
                 <h2><Star fill="var(--brown)" color="var(--brown)"/>{`${activeRecipe.rating}(${activeRecipe.reviewCount})`}</h2>
                 <h2>{activeRecipe.difficulty} recipe</h2>

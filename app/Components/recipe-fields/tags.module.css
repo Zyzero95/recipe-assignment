@@ -1,0 +1,12 @@
+:root{
+    --tag-color-default: var(--dark-red);
+    --tag-color-cuisine: var(--dark-red);
+    --tag-color-meal: var(--dark-red);
+}
+.tagList{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    list-style: none;
+    gap: 0.3em;
+}
