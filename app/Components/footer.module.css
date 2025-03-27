@@ -15,3 +15,43 @@
     align-items: center;
     text-align: center;
 }
+
+.footer h3 {
+    margin-block-end: 0.3em;
+}
+
+.navigationContainer {
+    width: 80%
+}
+
+.navigation {
+    text-align: left;
+}
+
+.navigation ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
+    padding: 0;
+    margin: 0;
+    text-align: start;
+}
+
+.navigation li {
+    padding-inline: 0;
+    padding-block: 0.25rem;
+}
+
+.navigation a {
+    color: var(--off-white);
+    text-decoration: none;
+    padding-block: 0.3rem;
+    padding-inline-start: 0;
+    padding-inline-end: 0.2em;
+    border-radius: 0.3125rem;
+}
+
+.navigation a:hover {
+    background-color: var(--light-red);
+}
