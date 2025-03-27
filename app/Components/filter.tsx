@@ -25,7 +25,7 @@ function Filter() {
 
   return (
     <div>
-        <select onChange={(e) => {handleChange(e.target.value)}} defaultValue={selectedOption}>
+        <select id="filterSelect" onChange={(e) => {handleChange(e.target.value)}} defaultValue={selectedOption}>
             <option value="default">filter by...</option>
             <option value="name">filter by name</option>
             <option value="difficulty">filter by difficulty</option>

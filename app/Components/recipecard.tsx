@@ -27,7 +27,7 @@ function RecipeCard({ data }: RecipeData) {
         </figure>
         <section className={styles.recipeCardTitle}><Title data={data}/></section>
         <section className={styles.recipeCardTags}><Tags data={data}/></section>
-        <section className={styles.recipeCardRating}><h3 className={styles.recipeCardRating}>{data.rating}<Star size={16} fill="yellow" color="yellow"/>{data.reviewCount}<MessageSquare size={16}/></h3></section>
+        <section className={styles.recipeCardRating}><p className={styles.recipeCardRating}>{data.rating}<Star size={16} fill="yellow" color="yellow"/>{data.reviewCount}<MessageSquare size={16}/></p></section>
         <Difficulty data={data} cssClass="recipeCardDifficulty"/>
         <Preptime data={data} cssClass="recipeCardCookTime"/>
       </section>
