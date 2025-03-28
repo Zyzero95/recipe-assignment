@@ -67,22 +67,32 @@ export default function NewsletterSignup() {
         <>
             <h3>Sign up for new recipes</h3>
             <form onSubmit={handleSubmit} role="form" className={componentStyles.formSignUp} translate="no">
-                <label htmlFor="email-newsletter">Email:</label>
-                <span className={globalStyles.screenReaderOnly}>(required)</span>
-                <input
-                    type="email"
-                    id="email-newsletter"
-                    name="email-newsletter"
-                    onInvalid={handleInvalidEmail}
-                    onInput={handleInput}
-                    onChange={(e) => setEmail(e.target.value)}
-                    value={email}
-                    required
-                    aria-required="true"
-                    aria-label='Email for newsletter subscription'
-                    aria-invalid={!!errorMsg}
-                    aria-describedby={errorMsg ? "email-error" : undefined}
-                    placeholder="you@somedomain" />
+                <fieldset>
+                    <label htmlFor="email-newsletter">
+                        Email:
+                        <span
+                            className={globalStyles.screenReaderOnly}
+                            role="note"
+                            id="email-required-description"
+                        >
+                            This field is required
+                        </span>
+                    </label>
+                    <input
+                        type="email"
+                        id="email-newsletter"
+                        name="email-newsletter"
+                        onInvalid={handleInvalidEmail}
+                        onInput={handleInput}
+                        onChange={(e) => setEmail(e.target.value)}
+                        value={email}
+                        required
+                        aria-required="true"
+                        aria-label='Email for newsletter subscription'
+                        aria-invalid={!!errorMsg}
+                        aria-describedby={`email-required-description ${errorMsg ? "email-error" : ""}`}
+                        placeholder="your@emailaddress.com" />
+                </fieldset>
                 <button id="submit" type="submit">Sign me up</button>
             </form>
             {message && <p role="status" className="success" aria-live="polite">{message}</p>}

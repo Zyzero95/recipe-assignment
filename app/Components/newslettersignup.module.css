@@ -1,1 +1,55 @@
-.formSignUp {}
+.formSignUp {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    --vertical-gap: 0.25rem;
+    --invalid-red: rgb(255, 99, 71);
+    --valid-green: rgb(50, 205, 50);
+    --valid-bg: rgb(178, 220, 178);
+}
+
+.formSignUp fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+    max-width: 100%;
+    outline: yellow 1px dotted;
+}
+
+.formSignUp label {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.formSignUp input {
+    flex: 1;
+    padding: 0.2rem;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    min-width: 200px;
+}
+
+/* HTML5 validation states */
+.formSignUp input:not(:placeholder-shown):invalid {
+    outline: 2px solid var(--invalid-red);
+    background-color: rgb(255, 99, 71);
+}
+
+.formSignUp input:not(:placeholder-shown):valid {
+    outline: 2px solid var(--valid-green);
+    background-color: var(--valid-bg);
+}
+
+.formSignUp input:placeholder-shown {
+    outline: none;
+    background-color: white;
+}
+
+.formSignUp button {
+    margin-top: var(--vertical-gap);
+    padding: calc(var(--vertical-gap) - 0.05rem) 1rem;
+}

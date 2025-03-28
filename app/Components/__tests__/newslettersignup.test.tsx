@@ -19,7 +19,7 @@ describe('Newsletter signup form', () => {
         });
     });
 
-    it.skip('uses HTML5 validation', async () => {
+    it('uses HTML5 validation', async () => {
         render(<NewsletterSignup />)
         const emailInput = screen.getByRole('textbox') as HTMLInputElement;
 
@@ -36,7 +36,7 @@ describe('Newsletter signup form', () => {
     it('shows browser validation message for empty input', async () => {
         render(<NewsletterSignup />);
 
-        const emailInput = screen.getByLabelText('Email:') as HTMLInputElement;
+        const emailInput = screen.getByLabelText(/^Email/) as HTMLInputElement;
         const submitButton = screen.getByRole('button', { name: 'Sign me up' });
 
         expect(emailInput.value).toBe('');
@@ -80,7 +80,6 @@ describe('Newsletter signup form', () => {
         const emailInput = screen.getByRole('textbox') as HTMLInputElement;
 
         await userEvent.type(emailInput, 'name@');
-        //emailInput.checkValidity();
         await userEvent.tab();
 
         expect(emailInput.validity.typeMismatch).toBe(true);

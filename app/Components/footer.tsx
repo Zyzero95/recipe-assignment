@@ -9,7 +9,7 @@ export default function Footer() {
                 <NewsletterSignup />
             </section>
             <section className={styles.navigation}>
-                <div className="navigationContainer">
+                <div className={styles.navigationContainer}>
                     <h3>Pages on the site</h3>
                     <NavigationLinks />
                 </div>
