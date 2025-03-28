@@ -22,8 +22,8 @@ export default async function Page({ params }: { params: Promise<{ id: number }>
                 <Tags data={activeRecipe}/>
                 <Ratings data={activeRecipe}/>
                 <Calories data={activeRecipe} />
-                <Difficulty data={activeRecipe} cssClass=""/>
-                <Preptime data={activeRecipe} cssClass=""/>
+                <Difficulty data={activeRecipe}/>
+                <Preptime data={activeRecipe}/>
             </summary>
             <aside className={styles.imageCard}>
                 <Image
