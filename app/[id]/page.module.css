@@ -3,7 +3,7 @@
     --image-height: clamp(250px, 90vw, 500px);
 }
 .flexLine{
-    background: linear-gradient(to left, var(--light-red), var(--beige));
+    background: var(--page-background);
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -13,9 +13,9 @@
         width: var(--image-width);
         margin: 2em;
         background-color: var(--off-white);
-        border: 2px solid var(--dark-gray);
-        border-radius: 10px;
-        box-shadow: 4px 2px 20px;
+        border: var(--card-border);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--card-box-shadow);
         overflow: hidden;
     }
     > .imageCard{
