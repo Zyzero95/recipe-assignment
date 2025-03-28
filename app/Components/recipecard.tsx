@@ -23,6 +23,8 @@ function RecipeCard({ data }: RecipeData) {
             src={data.image}
             alt={`Image depicting ${data.name}`}
             fill={true}
+            sizes="1000px"
+            priority={true}
           />
         </figure>
         <section className={styles.recipeCardTitle}><Title data={data}/></section>
