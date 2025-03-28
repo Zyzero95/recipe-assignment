@@ -33,12 +33,12 @@ export default async function Page({ params }: { params: Promise<{ id: number }>
         <main className={styles.flexLine}>
             <section className={styles.textCard}>
                 <ul>
-                    <CheckBoxList items={activeRecipe.ingredients}/>
+                    <CheckBoxList items={activeRecipe.ingredients} name="ingredients"/>
                 </ul>
             </section>
             <section className={styles.textCard}>
                 <ol>
-                    <CheckBoxList items={activeRecipe.instructions}/>
+                    <CheckBoxList items={activeRecipe.instructions} name="instructions"/>
                 </ol>
             </section>
         </main>
