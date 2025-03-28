@@ -42,7 +42,6 @@ async function updateRecipeData() {
 }
 
 async function getPage(current: number): Promise<RecipeResponse | null>{
-  console.log(current);
   try {
     const res: Response = await fetch(`${API_ENDPOINT}?skip=${current}`);
     if (!res.ok){
