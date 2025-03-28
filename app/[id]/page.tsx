@@ -17,20 +17,20 @@ export default async function Page({ params }: { params: Promise<{ id: number }>
     const activeRecipe: Recipe = await fetchRecipe(id);
     return (<>
         <header className={styles.flexLine} id="main">
-            <div className={styles.imageCard}>
-                <Image
-                src={activeRecipe.image}
-                alt={`an image of ${activeRecipe.name}`}
-                width={500}
-                height={500}/>
-            </div>
-            <aside className={styles.textCard}>
+            <summary className={styles.textCard}>
                 <Title data={activeRecipe}/>
                 <Tags data={activeRecipe}/>
                 <Ratings data={activeRecipe}/>
                 <Calories data={activeRecipe} />
                 <Difficulty data={activeRecipe} cssClass=""/>
                 <Preptime data={activeRecipe} cssClass=""/>
+            </summary>
+            <aside className={styles.imageCard}>
+                <Image
+                src={activeRecipe.image}
+                alt={`an image of ${activeRecipe.name}`}
+                width={500}
+                height={500}/>
             </aside>
         </header>
         <main className={styles.flexLine}>
